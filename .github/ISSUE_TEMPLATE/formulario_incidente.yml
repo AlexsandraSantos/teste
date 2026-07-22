@@ -1,0 +1,94 @@
+name: Formulário Incidente
+description: Formulário para relatar incidentes.
+title: "[SUPORTE]: "
+labels: ["suporte", "triagem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Por favor, preencha as informações abaixo para que a equipe técnica possa analisar e agir na sua solicitação.
+
+  - type: textarea
+    id: o-que-acontece
+    attributes:
+      label: 1. Descrição Detalhada
+      description: Informe o que está acontecendo vs. o que deveria acontecer.
+      placeholder: "Ex: Botão de estorno não funciona; deveria liberar o valor automaticamente."
+    validations:
+      required: true
+
+  - type: textarea
+    id: relato-cliente
+    attributes:
+      label: Relato do Cliente
+      description: O que o cliente pediu exatamente?
+      placeholder: Digite o relato do cliente...
+    validations:
+      required: false
+
+  - type: textarea
+    id: historico-acoes
+    attributes:
+      label: Histórico de Ações (O que o Atendimento já fez)
+      description: Informe se já houve tentativa de estorno, aplicação de crédito manual, cancelamento via sistema, etc.
+      placeholder: "Ex: Tentamos estorno manual pelo painel em 10/05, mas retornou erro 500."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acao-necessaria
+    attributes:
+      label: Ação Necessária e Justificativa
+      description: O que precisamos que seja feito agora e por quê?
+      placeholder: "Ex: Aplicar crédito pois o cliente tem evidência de erro na oferta."
+    validations:
+      required: true
+
+  - type: textarea
+    id: passo-a-passo
+    attributes:
+      label: 2. Passo a passo para reproduzir
+      description: Qual o caminho completo até o erro?
+      placeholder: "1. Fazer Login\n2. Ir para Tela X\n3. Clicar no Botão Y"
+    validations:
+      required: true
+
+  - type: input
+    id: ambiente
+    attributes:
+      label: 3. Ambiente
+      description: Navegador, sistema operacional e versão do app.
+      placeholder: "Ex: Google Chrome v120 / iOS 17 - App v2.4.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencias-links
+    attributes:
+      label: 4. Evidências (Links e Logs)
+      description: URLs e logs que comprovem a falha.
+      placeholder: Insira os links ou cole os logs aqui...
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidencias-prints
+    attributes:
+      label: 5. Evidências (Prints e Vídeos)
+      description: Arraste e solte ou cole aqui as imagens e vídeos que mostram o erro.
+      placeholder: Arraste os arquivos para esta caixa...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impacto
+    attributes:
+      label: 6. Impacto e Frequência
+      description: Quantos usuários são afetados e com que frequência ocorre?
+      options:
+        - "Baixo: Afeta apenas 1 usuário pontualmente"
+        - "Médio: Acontece com frequência, mas apenas para alguns usuários"
+        - "Alto: Afeta múltiplos usuários / bloqueia o fluxo principal"
+        - "Crítico: Sistema indisponível ou afeta todos os usuários"
+    validations:
+      required: true
