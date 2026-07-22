@@ -1,6 +1,6 @@
 name: Formulário Incidente
 description: Formulário para relatar incidentes.
-title: "[SUPORTE]: "
+title: "[INCIDENTE]: "
 labels: ["suporte", "triagem"]
 body:
   - type: markdown
